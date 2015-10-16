@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2009 University of Washington Licensed under the Apache
+	License, Version 2.0 (the "License"); you may not use this file except in
+	compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
+	Unless required by applicable law or agreed to in writing, software distributed
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+	the specific language governing permissions and limitations under the License.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="hosm.odk.collect.android"
+    android:versionCode="16"
+    android:versionName="1.1.5" >
+
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.network" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--  for Maps v2 functionality, want:
+    	uses-feature android:glEsVersion="0x00020000" android:required="false"
+    	BUT, the gl setting is not modified by the required parameter, so
+    	do not declare anything here - detect capabilities at runtime.
+    -->
+
+    <permission
+          android:name="org.opendatakit.tables.permission.MAPS_RECEIVE"
+          android:protectionLevel="signature" />
+    <uses-permission android:name="org.opendatakit.tables.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="22" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:xlargeScreens="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:name="hosm.odk.collect.android.application.Collect"
+        android:largeHeap="true"
+        android:installLocation="auto"
+        android:icon="@drawable/notes"
+        android:label="@string/app_name"
+        android:theme="@style/Collect" >
+
+        <provider
+            android:exported="true"
+            android:name="hosm.odk.collect.android.provider.FormsProvider"
+            android:authorities="hosm.odk.collect.android.provider.odk.forms" />
+        <provider
+            android:exported="true"
+            android:name="hosm.odk.collect.android.provider.InstanceProvider"
+            android:authorities="hosm.odk.collect.android.provider.odk.instances" />
+
+        <activity
+            android:name="hosm.odk.collect.android.activities.MainMenuActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="hosm.odk.collect.android.activities.FormEntryActivity"
+            android:configChanges="orientation"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.item/vnd.odk.form" />
+                <data android:mimeType="vnd.android.cursor.item/vnd.odk.instance" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name="hosm.odk.collect.android.activities.NotificationActivity"
+            android:label="@string/app_name"
+            android:taskAffinity=""
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            />
+        <activity
+            android:name="hosm.odk.collect.android.activities.DrawActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GoogleDriveActivity"
+            android:label="@string/app_name" 
+            android:windowSoftInputMode="stateHidden"
+            />
+        <activity
+            android:name="hosm.odk.collect.android.activities.InstanceChooserList"
+            android:label="@string/app_name" />
+
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <action android:name="android.intent.action.EDIT" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+
+            <data android:mimeType="vnd.android.cursor.dir/vnd.odk.instance" />
+        </intent-filter>
+
+        <activity
+            android:name="hosm.odk.collect.android.activities.InstanceChooserTabs"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.FormChooserList"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/vnd.odk.form" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="hosm.odk.collect.android.activities.FormManagerList"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.FormDownloadList"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.DataManagerList"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.FileManagerTabs"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GoogleMapsEngineUploaderActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GoogleMapsEngineUploaderActivityWithGoogleTask"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.InstanceUploaderList"
+            android:label="@string/app_name">
+	        <intent-filter>
+	            <action android:name="android.intent.action.VIEW" />
+	            <action android:name="android.intent.action.EDIT" />
+
+	            <category android:name="android.intent.category.DEFAULT" />
+	        </intent-filter>
+        </activity>
+        <activity
+            android:name="hosm.odk.collect.android.activities.InstanceUploaderActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.preferences.PreferencesActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.preferences.GMEPreferencesActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.preferences.OtherPreferencesActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.preferences.AggregatePreferencesActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.preferences.AdminPreferencesActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.FormHierarchyActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GeoPointActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GeoPointMapActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.GeoPointMapActivitySdk7"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.BearingActivity"
+            android:label="@string/app_name" />
+        <activity
+            android:name="hosm.odk.collect.android.activities.SplashScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Enable Shortcuts for Command Actions -->
+        <activity
+            android:name="hosm.odk.collect.android.activities.AndroidShortcuts"
+            android:label="ODK Form"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <receiver
+            android:name="hosm.odk.collect.android.receivers.NetworkReceiver"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="hosm.odk.collect.android.FormSaved" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAzpGmR2VHmSP73P2sr0i_zdXPHv3fIRWY"/>
+
+        <uses-library
+            android:name="com.google.android.maps"
+            android:required="false" />
+        
+        <activity
+            android:name="hosm.android.osmtracker.activity.TrackManager"
+            android:label="@string/gps_tracker" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.TrackLogger"
+            android:label="@string/tracklogger"
+            android:launchMode="singleTop" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.Preferences"
+            android:label="@string/prefs" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.WaypointList"
+            android:label="@string/wplist" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.TrackDetail"
+            android:label="@string/trackdetail" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.OpenStreetMapUpload"
+            android:label="@string/osm_upload" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="osm-upload"
+                    android:scheme="osmtracker" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="hosm.android.osmtracker.activity.About"
+            android:label="@string/about" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.DisplayTrack"
+            android:label="@string/displaytrack" />
+        <activity
+            android:name="hosm.android.osmtracker.activity.DisplayTrackMap"
+            android:label="@string/displaytrackmap" />
+        
+        <activity
+            android:name="hosm.android.osmtracker.activity.ViewHistoryMap"
+            android:label="@string/display_map" />
+
+        <service
+            android:name="hosm.android.osmtracker.service.gps.GPSLogger"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="hosm.android.osmtracker.intent.GPS_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="hosm.android.osmtracker.db.TrackContentProvider"
+            android:authorities="hosm.odk.collect.android.provider"
+            android:exported="false" />
+        
+        <receiver android:name="hosm.android.osmtracker.receiver.MediaButtonReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+            <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="0958f167a1daf9bc5a5fd439e69b65377b18fb4c" />
+    </application>
+
+</manifest>
