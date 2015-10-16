@@ -1,0 +1,15 @@
+*.pyc
+*.*~
+*~
+docs/build/doctrees
+build
+docs/build
+.DS_Store
+docs/_build
+docs/output
+.idea/
+docs/build-appdocs
+docs/output-app-docs
+docs/source/static
+*.mo
+.vagrant/
