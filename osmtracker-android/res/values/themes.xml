@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="DefaultTheme" parent="@android:style/Theme"/>
+    <style name="DarkTheme" parent="@android:style/Theme.Black"/>
+    <style name="LightTheme" parent="@android:style/Theme.Light"/>
+    <color name="oldgreen">#ff1c2604</color>
+    <color name="white">#77ffffff</color>
+    <color name="black">#00000000</color>
+</resources>

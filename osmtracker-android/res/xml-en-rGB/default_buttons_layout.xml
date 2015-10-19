@@ -1,0 +1,583 @@
+<layouts>
+
+    <layout name="root" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_misc"
+                label="Misc"
+                targetlayout="misc"
+                type="page" />
+            <button
+                icon="button_restriction"
+                label="Restriction"
+                targetlayout="restriction"
+                type="page" />
+            <button
+                icon="button_car"
+                label="Car"
+                targetlayout="car"
+                type="page" />
+        </row>
+        <row>
+            <button
+                icon="button_tourism"
+                label="Tourism"
+                targetlayout="tourism"
+                type="page" />
+            <button
+                icon="button_amenity"
+                label="Amenity"
+                targetlayout="amenity"
+                type="page" />
+            <button
+                icon="button_amenity"
+                label="Amenity More"
+                targetlayout="amenity_more"
+                type="page" />
+        </row>
+        <row>
+            <button
+                icon="button_way"
+                label="Way"
+                targetlayout="way"
+                type="page" />
+            <button
+                icon="button_track"
+                label="Track"
+                targetlayout="track"
+                type="page" />
+            <button
+                icon="button_landuse"
+                label="Landuse"
+                targetlayout="landuse"
+                type="page" />
+        </row>
+    </layout>
+    <layout name="misc" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_misc_bus_stop"
+                label="Misc Bus Stop"
+                type="tag" />
+            <button
+                icon="button_misc_railway"
+                label="Misc Railway"
+                type="tag" />
+            <button
+                icon="button_misc_telephone"
+                label="Misc Telephone"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_misc_post_box"
+                label="Misc Post Box"
+                type="tag" />
+            <button
+                icon="button_misc_atm"
+                label="Misc Atm"
+                type="tag" />
+            <button
+                icon="button_misc_bollard"
+                label="Misc Bollard"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_misc_toilets"
+                label="Misc Toilets"
+                type="tag" />
+            <button
+                icon="button_misc_shelter"
+                label="Misc Shelter"
+                type="tag" />
+            <button
+                icon="button_misc_surveillance"
+                label="Misc Surveillance"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="restriction" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_restriction"
+                label="Max 30"
+                type="tag" />
+            <button
+                icon="button_restriction"
+                label="Max 50"
+                type="tag" />
+            <button
+                icon="button_restriction"
+                label="Max 80"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_restriction"
+                label="Max 100"
+                type="tag" />
+            <button
+                icon="button_restriction"
+                label="Max 110"
+                type="tag" />
+            <button
+                icon="button_restriction"
+                label="Max 120"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_restriction_no_exit"
+                label="No Exit"
+                type="tag" />
+            <button
+                icon="button_restriction_traffic_light"
+                label="Traffic Light"
+                type="tag" />
+            <button
+                icon="button_restriction_one_way"
+                label="One Way"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="car" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_car_fuel_station"
+                label="Car Fuel Station"
+                type="tag" />
+            <button
+                icon="button_car_parking"
+                label="Car Parking"
+                type="tag" />
+            <button
+                icon="button_car_emergency_phone"
+                label="Car Emergency Phone"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_car_turning_circle"
+                label="Car Turning Circle"
+                type="tag" />
+            <button
+                icon="button_car_speed_camera"
+                label="Car Speed Camera"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="tourism" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_tourism_view_point"
+                label="Tourism View Point"
+                type="tag" />
+            <button
+                icon="button_tourism_information"
+                label="Tourism Information"
+                type="tag" />
+            <button
+                icon="button_tourism_picnic"
+                label="Tourism Picnic"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_tourism_attraction"
+                label="Tourism Attraction"
+                type="tag" />
+            <button
+                icon="button_tourism_theme_park"
+                label="Tourism Theme Park"
+                type="tag" />
+            <button
+                icon="button_tourism_castle"
+                label="Tourism Castle"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_tourism_monument"
+                label="Tourism Monument"
+                type="tag" />
+            <button
+                icon="button_tourism_museum"
+                label="Tourism Museum"
+                type="tag" />
+            <button
+                icon="button_tourism_cinema"
+                label="Tourism Cinema"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="amenity" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_amenity_bench"
+                label="@string/tag.amenity_bench"
+                type="tag" />
+            <button
+                icon="button_amenity_water"
+                label="@string/tag.amenity_water"
+                type="tag" />
+            <button
+                icon="button_amenity_pharmacy"
+                label="@string/tag.amenity_pharmacy"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenity_shop"
+                label="@string/tag.amenity_shop"
+                type="tag" />
+            <button
+                icon="button_amenity_marina"
+                label="@string/tag.amenity_marina"
+                type="tag" />
+            <button
+                icon="button_amenity_sport"
+                label="@string/tag.amenity_sport"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenity_taxi"
+                label="@string/tag.amenity_taxi"
+                type="tag" />
+            <button
+                icon="button_amenity_doctors"
+                label="@string/tag.amenity_doctors"
+                type="tag" />
+            <button
+                icon="button_amenity_recycling"
+                label="@string/tag.amenity_recycling"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenity_place_of_worship"
+                label="@string/tag.amenity_place_of_worship"
+                type="tag" />
+            <button
+                icon="button_amenity_post_office"
+                label="@string/tag.amenity_post_office"
+                type="tag" />
+            <button
+                icon="button_amenity_library"
+                label="@string/tag.amenity_library"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="amenity_more" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_amenitymore_school"
+                label="@string/tag.amenitymore_school"
+                type="tag" />
+            <button
+                icon="button_amenitymore_police"
+                label="@string/tag.amenitymore_police"
+                type="tag" />
+            <button
+                icon="button_amenitymore_fire_station"
+                label="@string/tag.amenitymore_fire_station"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenitymore_bank"
+                label="@string/tag.amenitymore_bank"
+                type="tag" />
+            <button
+                icon="button_amenitymore_playground"
+                label="@string/tag.amenitymore_playground"
+                type="tag" />
+            <button
+                icon="button_amenitymore_pub"
+                label="@string/tag.amenitymore_pub"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenitymore_hotel"
+                label="@string/tag.amenitymore_hotel"
+                type="tag" />
+            <button
+                icon="button_amenitymore_motel"
+                label="@string/tag.amenitymore_motel"
+                type="tag" />
+            <button
+                icon="button_amenitymore_hostel"
+                label="@string/tag.amenitymore_hostel"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_amenitymore_restaurant"
+                label="@string/tag.amenitymore_restaurant"
+                type="tag" />
+            <button
+                icon="button_amenitymore_fastfood"
+                label="@string/tag.amenitymore_fastfood"
+                type="tag" />
+            <button
+                icon="button_amenitymore_camp_site"
+                label="@string/tag.amenitymore_camp_site"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="way" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_way_bridge"
+                label="Bridge"
+                type="tag" />
+            <button
+                icon="button_way_zebra_crossing"
+                label="Zebra Crossing"
+                type="tag" />
+            <button
+                icon="button_way_motorway"
+                label="Motorway"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_way_trunk"
+                label="Trunk"
+                type="tag" />
+            <button
+                icon="button_way_primary"
+                label="Primary"
+                type="tag" />
+            <button
+                icon="button_way_secondary"
+                label="Secondary"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_way_tertiary"
+                label="Tertiary"
+                type="tag" />
+            <button
+                icon="button_way_residential"
+                label="Residential"
+                type="tag" />
+            <button
+                icon="button_way_service"
+                label="Service"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="track" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_track_track"
+                label="Track"
+                type="tag" />
+            <button
+                icon="button_track_cycleway"
+                label="Cycleway"
+                type="tag" />
+            <button
+                icon="button_track_footway"
+                label="Footway"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_track_bridleway"
+                label="Bridleway"
+                type="tag" />
+            <button
+                icon="button_track_steps"
+                label="Steps"
+                type="tag" />
+            <button
+                icon="button_track_living_street"
+                label="Living Street"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_track_pedestrian"
+                label="Pedestrian"
+                type="tag" />
+            <button
+                icon="button_track_grade1"
+                label="Grade 1"
+                type="tag" />
+            <button
+                icon="button_track_grade2"
+                label="Grade 2"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_track_grade3"
+                label="Grade 3"
+                type="tag" />
+            <button
+                icon="button_track_grade4"
+                label="Grade 4"
+                type="tag" />
+            <button
+                icon="button_track_grade5"
+                label="Grade 5"
+                type="tag" />
+        </row>
+    </layout>
+    <layout name="landuse" >
+        <row>
+            <button
+                icon="voice_32x32"
+                type="voicerec" />
+            <button
+                icon="camera_32x32"
+                type="picture" />
+            <button
+                icon="text_32x32"
+                type="textnote" />
+        </row>
+        <row>
+            <button
+                icon="button_landuse_farm"
+                label="Landuse Farm"
+                type="tag" />
+            <button
+                icon="button_landuse_landfill"
+                label="Landuse Landfill"
+                type="tag" />
+            <button
+                icon="button_landuse_basin"
+                label="Landuse Basin"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_landuse_reservoir"
+                label="Landuse Reservoir"
+                type="tag" />
+            <button
+                icon="button_landuse_forest"
+                label="Landuse Forest"
+                type="tag" />
+            <button
+                icon="button_landuse_allotments"
+                label="Landuse Allotments"
+                type="tag" />
+        </row>
+        <row>
+            <button
+                icon="button_landuse_cemetery"
+                label="Landuse Cemetery"
+                type="tag" />
+            <button
+                icon="button_landuse_recreation_ground"
+                label="Landuse Recreation Ground"
+                type="tag" />
+        </row>
+    </layout>
+
+</layouts>

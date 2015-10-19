@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <hosm.android.osmtracker.layout.GpsStatusRecord
+        android:id="@+id/gpsStatus"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <!--
+    <LinearLayout
+        android:id="@+id/tracklogger_root"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+    </LinearLayout> -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <org.osmdroid.views.MapView
+            android:id="@+id/displaytrackmap_osmView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <ImageView
+            android:id="@+id/displaytrackmap_imgZoomIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/acc.zoom_in"
+            android:src="@drawable/zoom_in" >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/displaytrackmap_imgZoomOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/acc.zoom_in"
+            android:src="@drawable/zoom_out" >
+        </ImageView>
+    </RelativeLayout>
+
+</LinearLayout>
