@@ -17,3 +17,6 @@ Features
 4. Map display to help navigate, display track and display PoI of form collecting
 5. Form filling capabilities from download blank form, edit saved form, delete saved form and send finalized form
 
+Documentation
+-------------
+Go to [Wiki Page](https://github.com/hotosm/HOSM-Collect/wiki) to see the documentation
