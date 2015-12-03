@@ -33,7 +33,6 @@ import java.util.Iterator;
 import java.util.Set;
 
 import hosm.odk.collect.android.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -130,6 +129,7 @@ public class GoogleMapsEngineUploaderActivity extends Activity implements
 		runTask();
 	}
 
+	@SuppressWarnings("deprecation")
 	private void runTask() {
 		mUlTask = (GoogleMapsEngineInstanceUploaderTask) getLastNonConfigurationInstance();
 		if (mUlTask == null) {
@@ -231,6 +231,7 @@ public class GoogleMapsEngineUploaderActivity extends Activity implements
 		super.onDestroy();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void uploadingComplete(HashMap<String, String> result) {
 		try {
@@ -298,6 +299,7 @@ public class GoogleMapsEngineUploaderActivity extends Activity implements
 		mProgressDialog.setMessage(mAlertMsg);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected Dialog onCreateDialog(int id) {
 		switch (id) {
@@ -345,6 +347,7 @@ public class GoogleMapsEngineUploaderActivity extends Activity implements
 		return null;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void createAlertDialog(String message) {
 		Collect.getInstance().getActivityLogger()
 				.logAction(this, "createAlertDialog", "show");

@@ -42,6 +42,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import hosm.odk.collect.android.R;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -55,6 +56,7 @@ import android.database.ContentObserver;
 import android.database.Cursor;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -70,7 +72,6 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -81,6 +82,7 @@ import android.widget.Toast;
  * @author Yaw Anokwa (yanokwa@gmail.com)
  * @author Widy Agung Priasmoro (widy.agung@gmail.com)
  */
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class MainMenuActivity extends Activity {
 	private static final String t = "MainMenuActivity";
 
@@ -127,6 +129,7 @@ public class MainMenuActivity extends Activity {
 	private static SharedPreferences mSharedPreferences;
 	private Editor edit;
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -640,6 +643,7 @@ public class MainMenuActivity extends Activity {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -688,6 +692,7 @@ public class MainMenuActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void createErrorDialog(String errorMsg, final boolean shouldExit) {
 		Collect.getInstance().getActivityLogger()
 				.logAction(this, "createErrorDialog", "show");
@@ -779,6 +784,7 @@ public class MainMenuActivity extends Activity {
 		return null;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void updateButtons() {
 		if (mFinalizedCursor != null && !mFinalizedCursor.isClosed()) {
 			mFinalizedCursor.requery();
@@ -857,6 +863,7 @@ public class MainMenuActivity extends Activity {
 					this).edit();
 			prefEdit.clear();
 			// first object is preferences
+			@SuppressWarnings("unchecked")
 			Map<String, ?> entries = (Map<String, ?>) input.readObject();
 			for (Entry<String, ?> entry : entries.entrySet()) {
 				Object v = entry.getValue();
@@ -880,6 +887,7 @@ public class MainMenuActivity extends Activity {
 					AdminPreferencesActivity.ADMIN_PREFERENCES, 0).edit();
 			adminEdit.clear();
 			// first object is preferences
+			@SuppressWarnings("unchecked")
 			Map<String, ?> adminEntries = (Map<String, ?>) input.readObject();
 			for (Entry<String, ?> entry : adminEntries.entrySet()) {
 				Object v = entry.getValue();

@@ -15,9 +15,7 @@
 package hosm.odk.collect.android.activities;
 
 import hosm.odk.collect.android.application.Collect;
-
 import hosm.odk.collect.android.R;
-
 import android.app.TabActivity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -33,6 +31,7 @@ import android.widget.TextView;
  * An example of tab content that launches an activity via
  * {@link android.widget.TabHost.TabSpec#setContent(android.content.Intent)}
  */
+@SuppressWarnings("deprecation")
 public class FileManagerTabs extends TabActivity {
 
 	private TextView mTVFF;

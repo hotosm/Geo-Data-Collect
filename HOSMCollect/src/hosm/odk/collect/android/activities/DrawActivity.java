@@ -18,13 +18,11 @@ package hosm.odk.collect.android.activities;
 import hosm.odk.collect.android.application.Collect;
 import hosm.odk.collect.android.utilities.ColorPickerDialog;
 import hosm.odk.collect.android.utilities.FileUtils;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-
 import hosm.odk.collect.android.R;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -58,6 +56,7 @@ import android.widget.RelativeLayout;
  * @author BehrAtherton@gmail.com
  * 
  */
+@SuppressLint({ "ClickableViewAccessibility", "InflateParams" })
 public class DrawActivity extends Activity {
 	public static final String t = "DrawActivity";
 	
@@ -463,7 +462,9 @@ public class DrawActivity extends Activity {
 		public void reset() {
 			Display display = ((WindowManager) getContext().getSystemService(
 					Context.WINDOW_SERVICE)).getDefaultDisplay();
+			@SuppressWarnings("deprecation")
 			int screenWidth = display.getWidth();
+			@SuppressWarnings("deprecation")
 			int screenHeight = display.getHeight();
 			resetImage(screenWidth, screenHeight);
 		}

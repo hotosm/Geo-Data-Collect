@@ -42,7 +42,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
-import android.database.ContentObserver;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -52,7 +51,6 @@ import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -68,12 +66,10 @@ public class ViewHistoryMap extends Activity implements
 	public static final String STATE_IS_TRACKING = "isTracking";
 	public static final String STATE_BUTTONS_ENABLED = "buttonsEnabled";
 	private GPSLogger gpsLogger;
-	//private Intent gpsLoggerServiceIntent;
 	private UserDefinedLayout mainLayout;
 	private boolean checkGPSFlag = true;
 	private File currentImageFile;
 	private long currentTrackId;
-	//private ServiceConnection gpsLoggerConnection = new GPSDisplayMapService(this);
 	private SharedPreferences prefs = null;
 	private boolean buttonsEnabled = false;
 	private SensorListener sensorListener;
@@ -93,7 +89,6 @@ public class ViewHistoryMap extends Activity implements
 	private boolean zoomedToTrackAlready = false;
 	private GeoPoint currentPosition;
 	private Integer lastTrackPointIdProcessed = null;
-	private ContentObserver trackpointContentObserver;
 	MyItemizedOverlay myItemizedOverlay = null;
 	private List<String> list;
 	
@@ -101,14 +96,9 @@ public class ViewHistoryMap extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		currentTrackId = 1;
 		Log.v(TAG, "Display Map" + currentTrackId);
-		//gpsLoggerServiceIntent = new Intent(this, GPSLogger.class);
-		//gpsLoggerServiceIntent.putExtra(Schema.COL_TRACK_ID, currentTrackId);
 		PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 		prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		setTheme(getResources()
-				.getIdentifier(
-						ThemeValidator.getValidTheme(prefs, getResources()),
-						null, null));
+		setTheme(getResources().getIdentifier(ThemeValidator.getValidTheme(prefs, getResources()),null, null));
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.displayhistorymap);
@@ -117,8 +107,8 @@ public class ViewHistoryMap extends Activity implements
 					STATE_BUTTONS_ENABLED, false);
 		}
 
-
 		sensorListener = new SensorListener();
+		
 		osmView = (MapView) findViewById(R.id.displaymap);
 		osmView.setMultiTouchControls(true);
 		osmView.setKeepScreenOn(prefs.getBoolean(
@@ -154,15 +144,6 @@ public class ViewHistoryMap extends Activity implements
 
 		createOverlays();
 
-		/**
-		// Create content observer for trackpoints
-		trackpointContentObserver = new ContentObserver(new Handler()) {
-			@Override
-			public void onChange(boolean selfChange) {
-				pathChanged();
-			}
-		};
-		 **/
 		// Register listeners for zoom buttons
 		findViewById(R.id.displaytrackmap_imgZoomIn).setOnClickListener(
 				new OnClickListener() {
@@ -381,8 +362,6 @@ public class ViewHistoryMap extends Activity implements
 			sensorListener.unregister();
 		}
 
-		getContentResolver().unregisterContentObserver(
-				trackpointContentObserver);
 		pathOverlay.clearPath();
 		super.onPause();
 	}
@@ -438,7 +417,7 @@ public class ViewHistoryMap extends Activity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.tracklogger_menu, menu);
+		inflater.inflate(R.menu.historymap_menu, menu);
 		return true;
 	}
 
@@ -446,19 +425,16 @@ public class ViewHistoryMap extends Activity implements
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		int itemId = item.getItemId();
-		if (itemId == R.id.tracklogger_menu_stoptracking) {
-			if (gpsLogger.isTracking()) {
-				Intent intent = new Intent(OSMTracker.INTENT_STOP_TRACKING);
-				sendBroadcast(intent);
-				((GpsStatusRecord) findViewById(R.id.gpsStatus))
-						.manageRecordingIndicator(false);
-				finish();
+		if (itemId == R.id.displaytrackmap_menu_center_to_gps) {
+			centerToGpsPos = true;
+			if(currentPosition != null){
+				osmViewController.animateTo(currentPosition);
 			}
 		}
-
 		return super.onOptionsItemSelected(item);
 	}
 
+	/**
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		switch (keyCode) {
@@ -473,7 +449,8 @@ public class ViewHistoryMap extends Activity implements
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-
+	**/
+	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.v(TAG, "Activity result: " + requestCode + ", resultCode="

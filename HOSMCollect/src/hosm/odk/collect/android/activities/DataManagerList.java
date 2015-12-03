@@ -22,7 +22,6 @@ import hosm.odk.collect.android.tasks.DeleteInstancesTask;
 import java.util.ArrayList;
 
 import hosm.odk.collect.android.R;
-
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.DialogInterface;
@@ -58,6 +57,7 @@ public class DataManagerList extends ListActivity implements
 
 	private static final String SELECTED = "selected";
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -188,6 +188,7 @@ public class DataManagerList extends ListActivity implements
 	/**
 	 * Create the instance delete dialog
 	 */
+	@SuppressWarnings("deprecation")
 	private void createDeleteInstancesDialog() {
         Collect.getInstance().getActivityLogger().logAction(this, "createDeleteInstancesDialog", "show");
 

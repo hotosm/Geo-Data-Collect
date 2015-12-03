@@ -19,9 +19,7 @@ import hosm.odk.collect.android.listeners.DiskSyncListener;
 import hosm.odk.collect.android.provider.FormsProviderAPI.FormsColumns;
 import hosm.odk.collect.android.tasks.DiskSyncTask;
 import hosm.odk.collect.android.utilities.VersionHidingCursorAdapter;
-
 import hosm.odk.collect.android.R;
-
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ContentUris;
@@ -54,7 +52,8 @@ public class FormChooserList extends ListActivity implements DiskSyncListener {
 
     private AlertDialog mAlertDialog;
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -189,7 +188,8 @@ public class FormChooserList extends ListActivity implements DiskSyncListener {
      * @param errorMsg
      * @param shouldExit
      */
-    private void createErrorDialog(String errorMsg, final boolean shouldExit) {
+    @SuppressWarnings("deprecation")
+	private void createErrorDialog(String errorMsg, final boolean shouldExit) {
 
     	Collect.getInstance().getActivityLogger().logAction(this, "createErrorDialog", "show");
 
