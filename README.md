@@ -4,7 +4,7 @@ HOSM-Collect
 Introduction
 ------------
 
-Humanitarian OpenStreetMap Collect or HOSM-Collect is a GPS and Form-based mobile application
+Geo Data Collect (formerly Humanitarian OpenStreetMap Collect or HOSM-Collect) is a GPS and Form-based mobile application
 which can be use to collect data in form format based on the user's current position.
 This software combined  ODK-Collect and OSM Tracker into one application that have capabilities
 to do tracking and form collecting.
@@ -19,4 +19,4 @@ Features
 
 Documentation
 -------------
-Go to [Wiki Page](https://github.com/hotosm/HOSM-Collect/wiki) to see the documentation
+Go to [Wiki Page](https://github.com/hotosm/Geo-Data-Collect/wiki) to see the documentation
