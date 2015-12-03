@@ -5,6 +5,10 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry kind="lib" path="F:/Android/android-sdk-windows/add-ons/addon-google_apis-google-19-1/libs/maps.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/F:/Android/android-sdk-windows/add-ons/addon-google_apis-google-19-1/docs/reference"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

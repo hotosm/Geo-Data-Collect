@@ -15,7 +15,6 @@
 package hosm.odk.collect.android.activities;
 
 import hosm.odk.collect.android.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -50,7 +49,8 @@ public class SplashScreenActivity extends Activity {
     private AlertDialog mAlertDialog;
 
 
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -197,7 +197,8 @@ public class SplashScreenActivity extends Activity {
     }
 
 
-    private void createErrorDialog(String errorMsg, final boolean shouldExit) {
+    @SuppressWarnings("deprecation")
+	private void createErrorDialog(String errorMsg, final boolean shouldExit) {
 	    Collect.getInstance().getActivityLogger().logAction(this, "createErrorDialog", "show");
         mAlertDialog = new AlertDialog.Builder(this).create();
         mAlertDialog.setIcon(android.R.drawable.ic_dialog_info);

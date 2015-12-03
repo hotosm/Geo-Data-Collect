@@ -50,7 +50,8 @@ public class StringWidget extends QuestionWidget {
     	setupChangeListener();
     }
 
-    protected StringWidget(Context context, FormEntryPrompt prompt, boolean readOnlyOverride, boolean derived) {
+    @SuppressWarnings("deprecation")
+	protected StringWidget(Context context, FormEntryPrompt prompt, boolean readOnlyOverride, boolean derived) {
         super(context, prompt);
         mAnswer = new EditText(context);
         mAnswer.setId(QuestionWidget.newUniqueId());

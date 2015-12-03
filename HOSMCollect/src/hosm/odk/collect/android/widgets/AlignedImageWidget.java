@@ -24,8 +24,8 @@ import java.io.File;
 import org.javarosa.core.model.data.IAnswerData;
 import org.javarosa.core.model.data.StringData;
 import org.javarosa.form.api.FormEntryPrompt;
-import hosm.odk.collect.android.R;
 
+import hosm.odk.collect.android.R;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -82,7 +82,8 @@ public class AlignedImageWidget extends QuestionWidget implements IBinaryWidget 
 
     private int iArray[] = new int[6];
 
-    public AlignedImageWidget(Context context, FormEntryPrompt prompt) {
+    @SuppressWarnings("deprecation")
+	public AlignedImageWidget(Context context, FormEntryPrompt prompt) {
         super(context, prompt);
 
         String appearance = prompt.getAppearanceHint();

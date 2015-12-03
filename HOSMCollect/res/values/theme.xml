@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="grad1">#ffd73f3f</color>
-    <color name="grad2">#ffc82e2e</color>
+    <color name="grad1">#ff707695</color>
+    <color name="grad2">#ff657191</color>
     <color name="white">#ffffffff</color>
     <color name="land">#ffadba8f</color>
     <color name="oldgreen">#ff1c2604</color>

@@ -551,9 +551,13 @@ public class TrackLogger extends Activity implements
 	// Manage options menu selections
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		Intent i;
 		int itemId = item.getItemId();
-		if (itemId == R.id.tracklogger_menu_stoptracking) {
+		if (itemId == R.id.displaytrackmap_menu_center_to_gps) {
+			centerToGpsPos = true;
+			if(currentPosition != null){
+				osmViewController.animateTo(currentPosition);
+			}
+		}else if (itemId == R.id.tracklogger_menu_stoptracking) {
 			// Start / Stop tracking
 			if (gpsLogger.isTracking()) {
 				Intent intent = new Intent(OSMTracker.INTENT_STOP_TRACKING);
