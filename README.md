@@ -1,5 +1,5 @@
-HOSM-Collect
-============
+Geo-Data-Collect
+================
 
 Introduction
 ------------
